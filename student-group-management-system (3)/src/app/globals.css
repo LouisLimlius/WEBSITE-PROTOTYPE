@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #181510;
+  --color-paper: #f6f1e7;
+  --color-cream: #fffdf7;
+  --color-smoke: #ece5d6;
+  --color-gold: #ffc94d;
+  --font-display: var(--font-sg), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+@utility shadow-hard-2 {
+  box-shadow: 2px 2px 0 0 var(--color-ink);
+}
+@utility shadow-hard {
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+@utility shadow-hard-6 {
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+@utility shadow-hard-8 {
+  box-shadow: 8px 8px 0 0 var(--color-ink);
+}
+
+@utility bg-dots {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-ink) 9%, transparent) 1.15px, transparent 1.15px);
+  background-size: 22px 22px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink) transparent;
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-float-in {
+  animation: float-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-float-in-delayed {
+  animation: float-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@utility animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
