@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Rental - Prototype Simpel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Jaya Rental</a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#armada">Armada</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#booking">Pesan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Sewa Mobil Jadi Lebih Mudah</h1>
+            <p>Cek stok mobil dan pesan langsung tanpa ribet chat admin.</p>
+            <a href="#armada" class="btn-primary">Lihat Mobil</a>
+        </div>
+    </header>
+
+    <!-- Statistik Sederhana -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <h3 id="count-mobil">3</h3>
+                <p>Total Unit</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="count-tersedia">3</h3>
+                <p>Tersedia</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="count-pesanan">0</h3>
+                <p>Pesanan Saya</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daftar Mobil -->
+    <section id="armada" class="section">
+        <div class="container">
+            <h2 class="section-title">Armada Kami</h2>
+            <div id="daftar-mobil" class="grid-container">
+                <!-- Data mobil akan muncul di sini via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo -->
+    <section id="promo" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Promo Menarik</h2>
+            <div id="daftar-promo" class="promo-container">
+                <!-- Data promo akan muncul di sini via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Pemesanan -->
+    <section id="booking" class="section">
+        <div class="container">
+            <h2 class="section-title">Form Pemesanan Online</h2>
+            <div class="booking-wrapper">
+                <form id="form-sewa" class="card">
+                    <div class="form-group">
+                        <label>Pilih Mobil:</label>
+                        <select id="select-mobil" required>
+                            <option value="">-- Pilih --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Anda:</label>
+                        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp:</label>
+                        <input type="tel" id="wa" placeholder="08xxxx" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Tgl Mulai:</label>
+                            <input type="date" id="tgl-mulai" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tgl Selesai:</label>
+                            <input type="date" id="tgl-selesai" required>
+                        </div>
+                    </div>
+                    <div id="info-harga" class="price-info">
+                        Pilih mobil dan tanggal untuk melihat harga.
+                    </div>
+                    <button type="submit" class="btn-submit">Pesan Sekarang</button>
+                </form>
+
+                <div class="info-text">
+                    <h3>Kenapa pesan di web?</h3>
+                    <ul>
+                        <li>Data masuk otomatis ke sistem.</li>
+                        <li>Stok mobil langsung terupdate.</li>
+                        <li>Gak perlu nunggu admin balas WA kelamaan.</li>
+                    </ul>
+                    <div id="notif" class="notif hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Riwayat Booking (Local Storage) -->
+    <section class="section bg-dark text-white">
+        <div class="container">
+            <h2>Riwayat Pesanan Anda (Simulasi)</h2>
+            <p>Data ini disimpan di browser Anda.</p>
+            <div id="riwayat-booking" class="riwayat-container">
+                <!-- Riwayat muncul di sini -->
+            </div>
+            <button onclick="resetData()" class="btn-reset">Reset Semua Data</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Jaya Rental Mobil - Prototype Tugas</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
